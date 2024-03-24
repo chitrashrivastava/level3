@@ -1,0 +1,36 @@
+:root{
+    --salmon: rgb(236, 144, 134);
+    --black: #000;
+    --white:rgb(254, 242, 242);
+    --cyan:  #64d5e9;
+    --dcyan:  #496c72;
+    --dsalmon:rgb(100, 37, 30);
+
+}
+
+*::selection{
+    background-color:var(--salmon) ;
+
+}
+
+body[theme="black"]{
+    background: var(--black) ;
+}
+body[theme="black"] .section{
+    color: var(--white) ;
+}
+body[theme="cyan"]{
+    background: var(--cyan)
+}
+body[theme="cyan"] .section{
+    color: var(--cyan);
+}
+body[theme="salmon"]{
+    background:var(--salmon);
+}
+body[theme="salmon"] .section{
+    color:var(--dsalmon);
+}
+body[theme="white"]{
+    background: var(--white);
+}
