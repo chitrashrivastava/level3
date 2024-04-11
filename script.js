@@ -5,7 +5,8 @@ function homepageAnimation(){
             trigger:".home",
             start:"top top",
             end:"bottom bottom",
-            scrub:1  
+            scrub:1 , 
+            
         }
     
     })
@@ -21,7 +22,7 @@ function homepageAnimation(){
         ease:Power2
     },'a')
     .to(".lft",{
-        xPercent:-10,
+        xPercent:-12,
         stagger:.03,
         ease: Power4
     },'b')
@@ -41,7 +42,7 @@ function realPageAnimation(){
             trigger:".real",
             start:"top top",
             end:"bottom bottom",
-           
+          
             scrub:2
         },
         xPercent:-200,
@@ -90,9 +91,42 @@ function paraAnimation(){
     
 
 }
+function capsulesAnimation(){
+gsap.to(".capsule:nth-child(2)",{
+    scrollTrigger:{
+        trigger:".capsules",
+        start:"top 70%",
+        end:"bottom bottom",
+        scrub:1
+    },
+    y:0,
+    ease: Power4
+})
+}
+function bodyColorChange(){
+    document.querySelectorAll(".section")
+    .forEach(function(e){
+        ScrollTrigger.create({
+            trigger:e,
+            start:"top 50%",
+            end:"bottom 50%",
+          
+            onEnter:function(){
+                document.body.setAttribute("theme",e.dataset.color)
+            },
+            onEnterBack:function(){
+                document.body.setAttribute("theme",e.dataset.color)
+            }
+        })
+    })
+}
 
 homepageAnimation();
 realPageAnimation();
 teamAnimation();
 paraAnimation();
+capsulesAnimation();
+bodyColorChange();
+
+
 
